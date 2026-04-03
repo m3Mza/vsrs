@@ -1,0 +1,90 @@
+@model KreirajZadatakViewModel
+@{
+    ViewData["Title"] = "Uredi zadatak";
+    var zadatakId = ViewData["ZadatakId"];
+    var trenutniStatus = ViewData["Status"]?.ToString();
+}
+
+<div class="form-container">
+    <h1 class="form-title">Uredi zadatak</h1>
+    
+    <form asp-action="Uredi" asp-route-id="@zadatakId" method="post" class="minimal-form">
+        <div asp-validation-summary="All" class="error-text mb-3"></div>
+        
+        <input type="hidden" asp-for="ProjekatId" />
+        
+        <div class="form-group-modern">
+            <label asp-for="Naslov">Naslov zadatka</label>
+            <input asp-for="Naslov" class="form-input-modern" />
+            <span asp-validation-for="Naslov" class="error-text"></span>
+        </div>
+        
+        <div class="form-group-modern">
+            <label asp-for="Opis">Opis</label>
+            <textarea asp-for="Opis" class="form-input-modern" rows="4"></textarea>
+            <span asp-validation-for="Opis" class="error-text"></span>
+        </div>
+        
+        <div class="form-group-modern">
+            <label for="status">Status</label>
+            <select name="status" class="form-input-modern">
+                @foreach (var status in (string[])ViewBag.Statusi)
+                {
+                    <option value="@status" selected="@(trenutniStatus == status)">@status</option>
+                }
+            </select>
+        </div>
+        
+        <div class="form-group-modern">
+            <label asp-for="Prioritet">Prioritet</label>
+            <select asp-for="Prioritet" class="form-input-modern">
+                <option value="Nizak">Nizak</option>
+                <option value="Srednji">Srednji</option>
+                <option value="Visok">Visok</option>
+                <option value="Hitan">Hitan</option>
+            </select>
+            <span asp-validation-for="Prioritet" class="error-text"></span>
+        </div>
+        
+        <div class="form-group-modern">
+            <label asp-for="RokIzvrsenja">Rok izvršenja</label>
+            <input asp-for="RokIzvrsenja" class="form-input-modern" type="date" />
+            <span asp-validation-for="RokIzvrsenja" class="error-text"></span>
+        </div>
+        
+        <div class="form-group-modern">
+            <label asp-for="DodeljenKorisnikId">Dodeli korisniku</label>
+            @if ((bool?)ViewData["IsAssignedUser"] == true)
+            {
+                <select asp-for="DodeljenKorisnikId" class="form-input-modern" disabled>
+                    @foreach (var korisnik in (IEnumerable<CreativeAgency.Models.Korisnik>)ViewBag.Korisnici)
+                    {
+                        <option value="@korisnik.KorisnikId">@korisnik.KorisnickoIme (@korisnik.Ime @korisnik.Prezime)</option>
+                    }
+                </select>
+                <input type="hidden" asp-for="DodeljenKorisnikId" />
+                <small class="form-text text-muted">Ne možete menjati dodelu zadatka koji vam je dodeljen.</small>
+            }
+            else
+            {
+                <select asp-for="DodeljenKorisnikId" class="form-input-modern">
+                    <option value="">-- Nedodeljen --</option>
+                    @foreach (var korisnik in (IEnumerable<CreativeAgency.Models.Korisnik>)ViewBag.Korisnici)
+                    {
+                        <option value="@korisnik.KorisnikId">@korisnik.KorisnickoIme (@korisnik.Ime @korisnik.Prezime)</option>
+                    }
+                </select>
+            }
+            <span asp-validation-for="DodeljenKorisnikId" class="error-text"></span>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Sačuvaj izmene</button>
+            <a asp-action="Pregled" asp-route-projekatId="@Model.ProjekatId" class="btn-text">Otkaži</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

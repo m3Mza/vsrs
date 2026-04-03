@@ -1,0 +1,52 @@
+@model KreirajProjekatViewModel
+@{
+    ViewData["Title"] = "Kreiraj projekat";
+}
+
+<div class="form-container">
+    <h1 class="form-title">Kreiraj novi projekat</h1>
+    
+    <form asp-action="Kreiraj" method="post" class="minimal-form">
+        <div asp-validation-summary="All" class="error-text mb-3"></div>
+        
+        <div class="form-group-modern">
+            <label asp-for="Naziv">Naziv projekta</label>
+            <input asp-for="Naziv" class="form-input-modern" placeholder="Unesite naziv projekta" />
+            <span asp-validation-for="Naziv" class="error-text"></span>
+        </div>
+        
+        <div class="form-group-modern">
+            <label asp-for="Opis">Opis</label>
+            <textarea asp-for="Opis" class="form-input-modern" rows="4" placeholder="Opišite projekat"></textarea>
+            <span asp-validation-for="Opis" class="error-text"></span>
+        </div>
+        
+        <div class="form-group-modern">
+            <label asp-for="Kategorija">Kategorija</label>
+            <select asp-for="Kategorija" class="form-input-modern">
+                <option value="Sajt">Sajt</option>
+                <option value="Aplikacija">Aplikacija</option>
+                <option value="Logo">Logo</option>
+                <option value="Brending">Brending</option>
+                <option value="Identitet">Identitet</option>
+                <option value="Foto/Video">Foto/Video</option>
+            </select>
+            <span asp-validation-for="Kategorija" class="error-text"></span>
+        </div>
+        
+        <div class="form-group-modern">
+            <label asp-for="DatumPocetka">Datum početka</label>
+            <input asp-for="DatumPocetka" class="form-input-modern" type="date" />
+            <span asp-validation-for="DatumPocetka" class="error-text"></span>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success">Kreiraj projekat</button>
+            <a asp-action="Pregled" class="btn-text">Otkaži</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
