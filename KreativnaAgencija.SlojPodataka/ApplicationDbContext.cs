@@ -11,12 +11,12 @@ namespace CreativeAgency.DAL
         {
         }
 
-        // Entity Tables
+        // tabele entiteta
         public DbSet<Korisnik> Korisnici { get; set; }
         public DbSet<Projekat> Projekti { get; set; }
         public DbSet<Zadatak> Zadaci { get; set; }
 
-        // Database Views
+        // bp pogledi
         public DbSet<AktivniProjektiSaZadacimaView> AktivniProjektiSaZadacima { get; set; }
         public DbSet<KorisnikStatistikaView> KorisnikStatistika { get; set; }
         public DbSet<ProjektiStatistikaView> ProjektiStatistika { get; set; }
@@ -86,7 +86,6 @@ namespace CreativeAgency.DAL
                 entity.HasKey(e => e.ZadatakId);
             });
 
-            // Početni podaci
             // Lozinka za admin korisnika je "admin123"
             modelBuilder.Entity<Korisnik>().HasData(
                 new Korisnik

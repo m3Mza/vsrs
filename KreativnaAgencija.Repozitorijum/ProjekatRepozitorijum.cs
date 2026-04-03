@@ -40,15 +40,8 @@ namespace CreativeAgency.Repository
             };
 
             var sql = "CALL sp_KreirajProjekat(@p_Naziv, @p_Opis, @p_Status, @p_Kategorija, @p_DatumPocetka, @p_DatumZavrsetka, @p_KreiraoKorisnikId)";
-            
-            await using var connection = _kontekst.Database.GetDbConnection();
-            await connection.OpenAsync();
-            
-            await using var command = connection.CreateCommand();
-            command.CommandText = sql;
-            command.Parameters.AddRange(parametri);
-            
-            var result = await command.ExecuteScalarAsync();
+
+            var result = await _dbUtils.IzvrsiSkalarAsync(sql, parametri);
             entitet.ProjekatId = Convert.ToInt32(result);
 
             return entitet;

@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreativeAgency.Web", "CreativeAgency.Web\CreativeAgency.Web.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF01234567}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreativnaAgencija.Web", "KreativnaAgencija.Web\KreativnaAgencija.Web.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF01234567}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreativeAgency.Models", "CreativeAgency.Models\CreativeAgency.Models.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF01234568}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreativnaAgencija.Modeli", "KreativnaAgencija.Modeli\KreativnaAgencija.Modeli.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF01234568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreativeAgency.DAL", "CreativeAgency.DAL\CreativeAgency.DAL.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF01234569}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreativnaAgencija.SlojPodataka", "KreativnaAgencija.SlojPodataka\KreativnaAgencija.SlojPodataka.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF01234569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreativeAgency.Repository", "CreativeAgency.Repository\CreativeAgency.Repository.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF0123456A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreativnaAgencija.Repozitorijum", "KreativnaAgencija.Repozitorijum\KreativnaAgencija.Repozitorijum.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF0123456A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreativeAgency.Business", "CreativeAgency.Business\CreativeAgency.Business.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF0123456B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreativnaAgencija.PoslovnaLogika", "KreativnaAgencija.PoslovnaLogika\KreativnaAgencija.PoslovnaLogika.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF0123456B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreativeAgency.Services", "CreativeAgency.Services\CreativeAgency.Services.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF0123456C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreativnaAgencija.Servisi", "KreativnaAgencija.Servisi\KreativnaAgencija.Servisi.csproj", "{8F1A9C6E-1234-4567-89AB-CDEF0123456C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

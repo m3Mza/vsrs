@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CreativeAgency.Models\CreativeAgency.Models.csproj" />
+    <ProjectReference Include="..\KreativnaAgencija.Modeli\KreativnaAgencija.Modeli.csproj" />
   </ItemGroup>
 
 </Project>

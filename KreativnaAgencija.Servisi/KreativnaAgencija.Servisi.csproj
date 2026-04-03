@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CreativeAgency.Models\CreativeAgency.Models.csproj" />
-    <ProjectReference Include="..\CreativeAgency.Business\CreativeAgency.Business.csproj" />
+    <ProjectReference Include="..\KreativnaAgencija.Modeli\KreativnaAgencija.Modeli.csproj" />
+    <ProjectReference Include="..\KreativnaAgencija.PoslovnaLogika\KreativnaAgencija.PoslovnaLogika.csproj" />
   </ItemGroup>
 
 </Project>

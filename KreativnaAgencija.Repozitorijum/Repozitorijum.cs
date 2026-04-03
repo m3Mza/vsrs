@@ -10,11 +10,13 @@ namespace CreativeAgency.Repository
     {
         protected readonly ApplicationDbContext _kontekst;
         protected readonly DbSet<T> _dbSkup;
+        protected readonly DBUtils _dbUtils;
 
         public Repozitorijum(ApplicationDbContext kontekst)
         {
             _kontekst = kontekst;
             _dbSkup = kontekst.Set<T>();
+            _dbUtils = new DBUtils(kontekst);
         }
 
         public virtual async Task<T?> PreuzmiPoIdAsync(int id)
@@ -61,7 +63,6 @@ namespace CreativeAgency.Repository
             return await _dbSkup.CountAsync();
         }
 
-        // Helper method to execute stored procedures
         protected async Task<List<TResult>> IzvrsiStoredProceduru<TResult>(string procedureName, params MySqlParameter[] parameters) where TResult : class
         {
             var paramString = string.Join(", ", parameters.Select(p => p.ParameterName));
